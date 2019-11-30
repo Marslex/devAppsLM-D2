@@ -1,0 +1,71 @@
+<div class="container">
+	
+		<div class="col-md-12">
+			<div class="card my-5">
+				<div class="card-body">
+					<form name="productoForm" (ngSubmit)="f.valid && onSubmit()" #f="ngForm" novalidate>
+						<div class="form-group">
+							<div class="row">		
+								<div class="col col-lg-2 col-md-4 col-sm-12">
+									<label for="titulo" class="control-label">titulo producto</label>
+								</div>
+								<div class="col col-lg-4 col-md-6 col-sm-12">
+									<input type="text" [(ngModel)]="producto.titulo" 
+										class="form-control"
+										id="titulo"
+										name="titulo"
+										placeholder="título"
+										required #titulo="ngModel">
+								</div>
+								<div *ngIf="f.submitted && titulo.invalid" class="alert alert-danger col col-lg-4 col-md-8 col-sm-12">
+									Título es requerido
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">		
+								<div class="col col-lg-2 col-md-4 col-sm-12">
+									<label for="descripcion">descripción</label>
+								</div>
+								<div class="col col-lg-4 col-md-6 col-sm-12">
+									<textarea maxlength="500" [(ngModel)]="producto.descripcion"
+										style="min-width: 100%" 
+										name="descripcion" 
+										id="descripcion" 
+										#descripcion="ngModel" required></textarea>
+								</div>
+								<div *ngIf="f.submitted && descripcion.invalid" class="alert alert-danger col col-lg-4 col-md-8 col-sm-12">
+									Descripción es requerida
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">		
+								<div class="col col-lg-2 col-md-4 col-sm-12">
+									<label for="descripcion">precio regular</label>
+								</div>
+								<div class="col col-lg-4 col-md-6 col-sm-12">
+									<input type="number" [(ngModel)]="producto.precio" 
+										class="form-control"
+										id="precio"
+										name="precio"
+										placeholder="precio regular"
+										min="0.00"
+										required #precio="ngModel">
+								</div>
+								<div *ngIf="f.submitted && precio.invalid" class="alert alert-danger col col-lg-4 col-md-8 col-sm-12">
+									Precio regular es requerido
+								</div>
+							</div>
+						</div>
+
+						<button type="submit"
+							class="btn btn-info">Agregar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+</div>
