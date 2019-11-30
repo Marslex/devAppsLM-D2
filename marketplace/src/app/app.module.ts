@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessageModule } from "primeng/message";
@@ -10,6 +9,7 @@ import { ProductoListComponent } from './view/producto-list/producto-list.compon
 import { ParentComponent } from './view/parent.component';
 import { HomeComponent } from './view/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     MessageModule,
 		MessagesModule,
     AppRoutingModule
